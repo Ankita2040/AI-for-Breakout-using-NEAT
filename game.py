@@ -31,8 +31,7 @@ PLATFORM_POS = [y for y in range(BORDER_WIDTH // 2, WIDTH - PLATFORM_WIDTH - BOR
 
 
 def drawWall(win):
-	# win.blit(BACKGROUND, (0, 0)) #win.fill(RED)
-	# pygame.draw.rect(win, LIGHT_RED, (0, 0, WIDTH, HEIGHT + BORDER_WIDTH), BORDER_WIDTH)
+	
 	for i in range(HEIGHT// (BORDER_WIDTH//2)):
 		win.blit(WALL_BLOCK, (0, i * (BORDER_WIDTH//2)))
 		win.blit(WALL_BLOCK, (WIDTH - BORDER_WIDTH//2, i * (BORDER_WIDTH//2)))
@@ -55,11 +54,8 @@ class Ball:
 		
 
 	def draw(self, win):
-		# pygame.draw.circle(win, RED, (self.prY, self.prX), BALL_RADIUS)
-		# pygame.draw.circle(win, WHITE, (self.y, self.x), BALL_RADIUS)
 		win.blit(BALL_IMG, (self.y, self.x))
 		drawWall(win)
-		# pygame.draw.rect(win, LIGHT_RED, (0, 0, WIDTH, HEIGHT + BORDER_WIDTH), BORDER_WIDTH)
 		pygame.display.update()
 
 	def drawEnd(self, win):
@@ -97,11 +93,8 @@ class PLatform:
 		self.vel = 5
 
 	def draw(self, win):
-		# pygame.draw.rect(win, RED, (self.prY, self.prX, PLATFORM_WIDTH, PLATFORM_HEIGHT), 0)
-		# pygame.draw.rect(win, WHITE, (self.y, self.x, PLATFORM_WIDTH, PLATFORM_HEIGHT), 0)
 		win.blit(PLATFORM_IMG, (self.y, self.x))
 		drawWall(win)
-		# pygame.draw.rect(win, LIGHT_RED, (0, 0, WIDTH, HEIGHT + BORDER_WIDTH), BORDER_WIDTH)
 		pygame.display.update()
 
 	def drawEnd(self, win):
@@ -162,10 +155,6 @@ def eval_genomes(genomes, config):
 			finalOP = output.index(max(output)) - 1
 
 			platforms[x].move(finalOP)
-			# platforms[x].draw(win)
-			# ball.draw(win)
-
-			
 
 			if ball.x > platforms[x].x:
 				ball.drawEnd(win)
@@ -180,11 +169,7 @@ def eval_genomes(genomes, config):
 				if ball.y >= platforms[x].y and ball.y <= platforms[x].y + PLATFORM_WIDTH:
 					ge[x].fitness += 10
 					ball.score += 1
-				
-				# if ge[x].fitness >= 10000:
-				# 	print("SCORE -> {}".format(balls[x].score))
-				# 	run = False
-				# 	break
+
 
 		win.blit(BACKGROUND, (0,0))
 		drawWall(win)

@@ -198,3 +198,27 @@ if __name__ == "__main__":
 	local_dir = os.path.dirname(__file__)
 	config_path = os.path.join(local_dir, "config-FeedForward.txt")
 	run(config_path)
+
+
+# FINAL NETWORK -> 
+
+# Nodes:
+
+# 	0 DefaultNodeGene(key=0, bias=0.4681362068901073, response=1.0, activation=tanh, aggregation=sum)
+# 	1 DefaultNodeGene(key=1, bias=-0.7847066751326026, response=1.0, activation=tanh, aggregation=sum)
+# 	2 DefaultNodeGene(key=2, bias=-0.9954854092123031, response=1.0, activation=tanh, aggregation=sum)
+
+# Connections:
+
+# 	DefaultConnectionGene(key=(-4, 0), weight=1.6285013685748344, enabled=False)
+# 	DefaultConnectionGene(key=(-4, 2), weight=-0.7101061666647931, enabled=True)
+# 	DefaultConnectionGene(key=(-3, 0), weight=2.067433038877517, enabled=True)
+# 	DefaultConnectionGene(key=(-3, 1), weight=0.734692619956036, enabled=False)
+# 	DefaultConnectionGene(key=(-3, 2), weight=0.9306699673288863, enabled=True)
+# 	DefaultConnectionGene(key=(-2, 0), weight=-0.23500221405740196, enabled=True)
+# 	DefaultConnectionGene(key=(-2, 1), weight=1.5154625453785813, enabled=True)
+# 	DefaultConnectionGene(key=(-2, 2), weight=-2.674277591063213, enabled=True)
+# 	DefaultConnectionGene(key=(-1, 0), weight=-0.624714514876567, enabled=True)
+# 	DefaultConnectionGene(key=(-1, 1), weight=0.8375018129099269, enabled=True)
+# 	DefaultConnectionGene(key=(-1, 2), weight=-0.060159958203100605, enabled=True)
+# 	DefaultConnectionGene(key=(0, 0), weight=0.35188613188996326, enabled=True)
